@@ -43,30 +43,32 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className="profile-container">
       <h2>Profile</h2>
       {user ? (
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form onSubmit={handleSubmit} className="profile-form">
+          <div className="form-group">
             <label>Username:</label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+              className="form-input"
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Email:</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="form-input"
             />
           </div>
-          {error && <p>{error}</p>}
-          <button type="submit">Update Profile</button>
+          {error && <p className="error-message">{error}</p>}
+          <button type="submit" className="submit-button">Update Profile</button>
         </form>
       ) : (
         <p>Loading profile...</p>
