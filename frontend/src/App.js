@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
@@ -44,11 +44,11 @@ function App() {
             <p>Loading data...</p>
           )}
         </header>
-        <Switch>
+        <Routes>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/profile" component={Profile} />
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
